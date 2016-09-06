@@ -1,0 +1,9 @@
+{-# LANGUAGE OverloadedStrings #-}
+:set -XOverloadedStrings
+:set prompt "\ESC[32mλ> \ESC[m"
+:def rm const $ return $ unlines [":r","main"]
+:def rtl const $ return $ unlines [":! ./prerun.sh",":r","runTimeline\"dev_stuff/run/runtimeline.json\"", ":! ./amerun.sh", ":! ./convertrun.sh", ":! ./postrun.sh"]
+:def rl const $ return $ unlines [":! ./prerun.sh", ":r","runState \"dev_stuff/run/run-state-last.json\"", ":! ./amerun.sh && ./convertrun.sh", ":! ./postrun.sh"]
+:def rls const $ return $ unlines [":! ./prerun.sh", ":r","runStemState \"dev_stuff/run/run-state-last.json\"", ":! ./amerun.sh && ./convertrun.sh", ":! ./postrun.sh"]
+:def ra const $ return $ unlines [":! ./prerun.sh", ":! ./amerun.sh", ":! ./convertrun.sh"]
+:def pl const $ return $ unlines [":! ./justplay.sh"]
